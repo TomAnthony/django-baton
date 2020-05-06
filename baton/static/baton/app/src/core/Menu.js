@@ -56,7 +56,7 @@ let Menu = {
     data.forEach((voice, index) => {
       let active = false
       if (voice.url) {
-        let pathRexp = new RegExp(voice.url)
+        let pathRexp = new RegExp("^"+voice.url+"$")
         active = pathRexp.test(location.pathname)
       }
       let li = $('<li />', { 'class': 'top-level ' + voice.type + (active ? ' active' : '') })
